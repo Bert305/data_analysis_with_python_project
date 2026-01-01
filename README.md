@@ -34,6 +34,8 @@ data_analysis_with_python_project/
   - Comprehensive model evaluation with R², MSE, and RMSE metrics
   - 4-panel visualization showing actual vs predicted prices and residual plots
   - Performance comparison between training and testing sets
+  - Example prediction demonstration with real house features
+  - Detailed coefficient interpretation and explanation
 - **Advanced Models**: Ridge regression and polynomial feature engineering
 - **ML Pipeline**: Complete scikit-learn pipeline for model training and evaluation
 
@@ -83,8 +85,9 @@ python multi_linear_regression.py
    This script will:
    - Train a multiple linear regression model using sqft_living, bedrooms, and bathrooms
    - Display R², MSE, and RMSE metrics for both training and testing sets
+   - Show model coefficients with detailed interpretation
+   - Demonstrate prediction with an example house (1500 sqft, 3 bedrooms, 2 bathrooms)
    - Generate a 4-panel visualization showing actual vs predicted prices and residual plots
-   - Save the plot to `outputs/plots/multi_linear_regression_results.png`
 
 5. **Train ridge regression models**:
 ```bash
@@ -123,7 +126,8 @@ The project generates:
   - **R² Score**: Measures proportion of variance explained (0.51 for multi-linear regression)
   - **MSE**: Mean Squared Error in squared dollar units
   - **RMSE**: Root Mean Squared Error (~$254k training, ~$272k testing for multi-linear regression)
-  - Model coefficients and intercept values
+  - Model coefficients with interpretation (e.g., each sqft adds ~$306 to price)
+  - Example prediction for a sample house (~$382k for 1500 sqft, 3 bed, 2 bath)
 
 ## License
 
