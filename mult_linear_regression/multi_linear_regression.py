@@ -4,6 +4,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, root_mean_squared_error
 import matplotlib.pyplot as plt
 import numpy as np
+import warnings
+
+# Suppress the feature names warning
+warnings.filterwarnings('ignore', message='X does not have valid feature names')
 
 
 # Seperate features and target variable
@@ -68,11 +72,27 @@ coefficients = pd.Series(
     index=X.columns,
     name="Coefficient"
 )
+# What are coefficients? (the rules your machine learned)
 
+# Each number tells the machine:
+
+# > “If this thing changes, how does the price change?”
 print("\nModel Coefficients:")
 print(coefficients)
 
 print(f"\nIntercept: {model.intercept_:.2f}")
+
+# If square footage increases by 1 sqft, price increases by about $287.63.
+# If bedrooms increase by 1, price decreases by about $31,631.57, holding other factors constant.
+# If bathrooms increase by 1, price increases by about $50,000, holding other factors constant.
+
+# So if the sqft_living is 1500, bedrooms is 3, and bathrooms is 2, the predicted price would be:
+example_sqft = 1500
+example_bedrooms = 3
+example_bathrooms = 2
+example_features = np.array([[example_sqft, example_bedrooms, example_bathrooms]])
+predicted_price = model.predict(example_features)
+print(f"\nPredicted Price for example house: ${predicted_price[0]:,.2f}")
 
 # Create visualizations
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
