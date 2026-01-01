@@ -27,6 +27,7 @@ def main():
     # print("Cleaned dataset saved.")
     print(df.dtypes) # show data types
     print(df.head()) # show first few rows
+    print(df.describe()) # show summary of cleaned data
 
 if __name__ == "__main__":
     main()
