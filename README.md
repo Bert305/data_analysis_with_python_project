@@ -1,6 +1,6 @@
 # Data Analysis with Python Project
 
-A comprehensive data analysis project using Python for predictive modeling and exploratory data analysis on the King County house sales dataset.
+A comprehensive data analysis project using Python for predictive modeling and exploratory data analysis on the King County house sales dataset. Inspired from the IBM Course Data Analysis with Python.
 
 # Notes from IBM Course Data Analysis with Python
 https://docs.google.com/document/d/1CF4naOy_uOlzKLxhNeE9y0XEBT6vzXqSGcK1sfN2jIM/edit?usp=sharing
