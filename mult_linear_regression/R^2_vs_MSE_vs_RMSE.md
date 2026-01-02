@@ -22,9 +22,8 @@ All three measure **how good your regression model is**, but they answer **diffe
 
 ### What it is
 
-[
-\text{MSE} = \frac{1}{n} \sum (y - \hat{y})^2
-]
+<img width="220" height="55" alt="image" src="https://github.com/user-attachments/assets/a5bea682-866c-41f9-b9ce-20b1f497c8b5" />
+
 
 ### Plain English
 
@@ -55,9 +54,8 @@ If your model predicts house prices:
 
 ### What it is
 
-[
-\text{RMSE} = \sqrt{\text{MSE}}
-]
+<img width="192" height="57" alt="image" src="https://github.com/user-attachments/assets/3e1ec3ab-c933-40d0-aefb-c970e31326e8" />
+
 
 ### Plain English
 
@@ -83,9 +81,8 @@ If your model predicts house prices:
 
 ### What it is
 
-[
-R^2 = 1 - \frac{\text{MSE}*{model}}{\text{MSE}*{baseline}}
-]
+<img width="195" height="70" alt="image" src="https://github.com/user-attachments/assets/7fd29287-1203-4bf1-89b7-7a6f93c9cc8b" />
+
 
 ### Plain English
 
