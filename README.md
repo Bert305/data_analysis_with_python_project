@@ -2,6 +2,9 @@
 
 A comprehensive data analysis project using Python for predictive modeling and exploratory data analysis on the King County house sales dataset.
 
+# Notes from IBM Course Data Analysis with Python
+https://docs.google.com/document/d/1CF4naOy_uOlzKLxhNeE9y0XEBT6vzXqSGcK1sfN2jIM/edit?usp=sharing
+
 ## Project Overview
 
 This project demonstrates a complete data science workflow including data cleaning, exploratory data analysis, and building multiple regression models to predict house prices.
