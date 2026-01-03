@@ -16,6 +16,13 @@ data_analysis_with_python_project/
 ├── data/
 │   ├── kc_house_data.csv          # Raw dataset
 │   └── kc_house_data_clean.csv    # Cleaned dataset
+├── linear_regression_vs_random_forest/
+│   ├── main.py                    # LR vs RF model comparison
+│   ├── about_this_project.md      # Project explanation
+│   ├── explain_dataset.md         # Dataset details
+│   ├── LR_vs_RF_Research.md       # Research notes
+│   ├── Plot_Explained.md          # Visualization explanation
+│   └── step_by_step_deatils.md    # Step-by-step guide
 ├── mult_linear_regression/
 │   └── multi_linear_regression.py # Enhanced multiple linear regression with visualizations
 ├── outputs/
@@ -33,6 +40,12 @@ data_analysis_with_python_project/
 - **Data Cleaning**: Handles missing values, outliers, and data preprocessing
 - **Exploratory Data Analysis**: Generates insightful visualizations including boxplots and regression plots
 - **Linear Models**: Implements simple and multiple linear regression
+- **Linear Regression vs Random Forest**: 
+  - Model comparison on Delaney solubility dataset (1,144 compounds)
+  - Side-by-side evaluation of Linear Regression and Random Forest Regressor
+  - Performance metrics comparison (R², MSE, RMSE)
+  - Scatter plot visualization showing actual vs predicted values
+  - Educational documentation explaining supervised learning and regression tasks
 - **Enhanced Multiple Linear Regression**: 
   - Comprehensive model evaluation with R², MSE, and RMSE metrics
   - 4-panel visualization showing actual vs predicted prices and residual plots
@@ -80,7 +93,19 @@ python eda.py
 python linear_models.py
 ```
 
-4. **Train multiple linear regression with visualizations**:
+4. **Compare Linear Regression vs Random Forest**:
+```bash
+cd linear_regression_vs_random_forest
+python main.py
+```
+   This script will:
+   - Load the Delaney solubility dataset (1,144 compounds)
+   - Train both Linear Regression and Random Forest Regressor models
+   - Display performance metrics (R², MSE, RMSE) for both models
+   - Generate scatter plot comparing actual vs predicted values
+   - Show model comparison results (LR performed slightly better with R²=0.77 vs RF R²=0.76)
+
+5. **Train multiple linear regression with visualizations**:
 ```bash
 cd mult_linear_regression
 python multi_linear_regression.py
@@ -92,12 +117,12 @@ python multi_linear_regression.py
    - Demonstrate prediction with an example house (1500 sqft, 3 bedrooms, 2 bathrooms)
    - Generate a 4-panel visualization showing actual vs predicted prices and residual plots
 
-5. **Train ridge regression models**:
+6. **Train ridge regression models**:
 ```bash
 python ridge_and_poly_ridge.py
 ```
 
-6. **Run ML pipeline**:
+7. **Run ML pipeline**:
 ```bash
 python pipeline_model.py
 ```
@@ -110,14 +135,22 @@ python pipeline_model.py
 - matplotlib
 - seaborn
 
-## Dataset
+## Datasets
 
-The project uses the King County House Sales dataset, which contains house sale prices and various features such as:
+### King County House Sales Dataset
+Used in most scripts for predicting house prices. Contains house sale prices and various features such as:
 - Square footage
 - Number of bedrooms and bathrooms
 - Waterfront location
 - Year built
 - And more...
+
+### Delaney Solubility Dataset
+Used in the Linear Regression vs Random Forest comparison. Contains:
+- 1,144 compounds with structural information
+- Water solubility data (logS target variable)
+- Molecular descriptors (MolLogP, MolWt, NumRotatableBonds, AromaticProportion)
+- Benchmark dataset for supervised learning regression tasks
 
 ## Output
 
@@ -125,12 +158,18 @@ The project generates:
 - Cleaned dataset in `data/kc_house_data_clean.csv`
 - Visualization plots in `outputs/plots/`
   - `multi_linear_regression_results.png`: 4-panel visualization with actual vs predicted and residual plots
+  - Actual vs Predicted scatter plot from LR vs RF comparison
 - Model performance metrics printed to console:
-  - **R² Score**: Measures proportion of variance explained (0.51 for multi-linear regression)
-  - **MSE**: Mean Squared Error in squared dollar units
-  - **RMSE**: Root Mean Squared Error (~$254k training, ~$272k testing for multi-linear regression)
-  - Model coefficients with interpretation (e.g., each sqft adds ~$306 to price)
-  - Example prediction for a sample house (~$382k for 1500 sqft, 3 bed, 2 bath)
+  - **Linear Regression vs Random Forest (Solubility Dataset)**:
+    - LR Test R²: 0.7706 | MSE: 0.9991 | RMSE: 1.0070
+    - RF Test R²: 0.7584 | MSE: 1.0521 | RMSE: 1.0282
+    - Linear Regression performed slightly better on this dataset
+  - **Multi-Linear Regression (House Price Dataset)**:
+    - R² Score: 0.51 (proportion of variance explained)
+    - MSE: Mean Squared Error in squared dollar units
+    - RMSE: ~$254k training, ~$272k testing
+    - Model coefficients with interpretation (e.g., each sqft adds ~$306 to price)
+    - Example prediction for a sample house (~$382k for 1500 sqft, 3 bed, 2 bath)
 
 ## License
 
